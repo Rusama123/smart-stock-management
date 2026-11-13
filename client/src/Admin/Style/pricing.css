@@ -1,0 +1,396 @@
+/* ── Modal overlay ── */
+.pricing-payment-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;          /* mobile pe edges touch na ho */
+}
+
+/* ── Modal box ── */
+.pricing-payment-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;       /* screen se bahar na jaye */
+  overflow-y: auto;       /* andar scroll ho */
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* ── Payment method toggle ── */
+.payment-method-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* equal width dono buttons */
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.payment-method-toggle button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 0.5px solid #d1d5db;
+  background: #fff;
+  color: #6b7280;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.payment-method-toggle button.active {
+  border: 1.5px solid #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* ── Card note ── */
+.payment-card-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 480px) {
+  .pricing-payment-modal {
+    padding: 18px;
+    max-height: 92vh;
+  }
+  .payment-method-toggle button {
+    font-size: 12px;
+    padding: 9px 8px;
+  }
+}
+
+
+
+/* ─── Add these styles to your existing pricing.css ─── */
+
+/* Step Indicator */
+.payment-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.step-item.active {
+  color: #1a73e8;
+}
+
+.step-item.done {
+  color: #16a34a;
+}
+
+.step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f5f5f5;
+  transition: all 0.3s;
+}
+
+.step-item.active .step-dot {
+  border-color: #1a73e8;
+  background: #1a73e8;
+  color: white;
+}
+
+.step-item.done .step-dot {
+  border-color: #16a34a;
+  background: #16a34a;
+  color: white;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+  max-width: 60px;
+}
+
+/* Payment link */
+.payment-link {
+  color: #1a73e8;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.payment-link:hover {
+  color: #1558c0;
+}
+/* ═══════════════════════════════════════════════════════
+   pricing-additions.css  — add these to your pricing.css
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Step Indicator ────────────────────────────────────── */
+.payment-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 14px 0 22px;
+}
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 500;
+  min-width: 50px;
+}
+.step-item.active  { color: #1a73e8; }
+.step-item.done    { color: #16a34a; }
+.step-dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  background: #f5f5f5;
+  transition: all 0.25s;
+}
+.step-item.active .step-dot { border-color: #1a73e8; background: #1a73e8; color: white; }
+.step-item.done   .step-dot { border-color: #16a34a; background: #16a34a; color: white; }
+.step-line { flex: 1; height: 2px; background: #ddd; max-width: 40px; }
+
+/* ── Role Badge ────────────────────────────────────────── */
+.pm-role-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #f0f7ff;
+  border: 1px solid #c3dafe;
+  color: #1e40af;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.pm-role-badge i { font-size: 16px; }
+
+/* ── Form Fields ───────────────────────────────────────── */
+.pm-field {
+  margin-bottom: 13px;
+}
+.pm-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 5px;
+}
+.pm-field input {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  outline: none;
+}
+.pm-field input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+}
+.pm-field input.pm-input-error {
+  border-color: #ef4444;
+  background: #fff8f8;
+}
+.pm-field input.pm-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.10);
+}
+.pm-err {
+  display: block;
+  color: #ef4444;
+  font-size: 11.5px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ── Password wrapper ──────────────────────────────────── */
+.pm-pwd-wrap {
+  position: relative;
+}
+.pm-pwd-wrap input {
+  padding-right: 44px;
+}
+.pm-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.pm-eye:hover { color: #111; }
+
+/* ── Verify step ───────────────────────────────────────── */
+.pm-verify-info {
+  text-align: center;
+  padding: 12px 0 18px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.pm-verify-info i { display: block; margin-bottom: 8px; }
+
+/* ── Payment link / caption ────────────────────────────── */
+.payment-link {
+  color: #1a73e8;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.payment-link:hover { color: #1558c0; }
+
+.payment-success-note {
+  color: #16a34a;
+  font-size: 13px;
+  text-align: center;
+  margin: 6px 0;
+}
+
+/* ══ NEW 2-STEP MODAL STYLES ══════════════════════════════ */
+
+/* Modal header row */
+.payment-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.payment-modal-header h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 3px;
+}
+
+/* Tab switcher */
+.pm-auth-tabs {
+  display: flex;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.pm-tab-btn {
+  flex: 1;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border: none;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: background .18s, color .18s;
+}
+.pm-tab-btn.active {
+  background: #005A8B;
+  color: #fff;
+  font-weight: 700;
+}
+.pm-tab-btn:not(.active):hover {
+  background: #f0f7fc;
+  color: #005A8B;
+}
+
+/* Submit button */
+.payment-submit-btn {
+  width: 100%;
+  padding: 13px;
+  background: #005A8B;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s;
+  margin-top: 6px;
+}
+.payment-submit-btn:hover:not(:disabled) { background: #004570; }
+.payment-submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Order summary table */
+.payment-summary {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border: 1px solid #e5e7eb;
+}
+.payment-summary > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 13.5px;
+  color: #444;
+}
+.payment-summary > div:last-child { border-bottom: none; }
+.payment-summary .summary-total {
+  font-weight: 700;
+  color: #111;
+  font-size: 15px;
+}
+
+/* Logged-in user card on payment step */
+.pm-checkout-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+.pm-checkout-user .user-name  { font-weight: 600; font-size: 14px; color: #111; }
+.pm-checkout-user .user-email { color: #6b7280; font-size: 12px; }

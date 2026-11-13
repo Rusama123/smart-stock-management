@@ -1,0 +1,98 @@
+/* Tablet (portrait + landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+.container-login {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;              /* ✅ Centers container itself */
+  background-color: var(--color-border);
+  display: flex;
+  justify-content: center;     /* ✅ Centers login box horizontally */
+  align-items: center;         /* ✅ Centers login box vertically */
+}
+
+
+.login{
+     border-radius: 30px;
+   width: 80%;
+    text-align: center;
+      padding: 0 20px 20px 20px;
+    
+}
+.auth-main input{
+   width: 90%;
+   border-radius: 8px ;
+   padding-left: 15px;
+}
+.container-login::before {
+  display: none;
+}
+
+/* Right image (bottom-right) */
+.container-login::after {
+ display: none;
+}
+}
+/* Tablet (portrait + landscape) */
+@media (max-width: 768px) {
+.container-login {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;              /* ✅ Centers container itself */
+  background-color: var(--color-border);
+  display: flex;
+  justify-content: center;     /* ✅ Centers login box horizontally */
+  align-items: center;         /* ✅ Centers login box vertically */
+}
+
+
+.login{
+  border-radius: 0px;
+   width: 100%;
+    text-align: center;
+      padding: 0 20px 40px 20px;
+    
+}
+.auth-main input{
+   width: 94%;
+   border-radius: 8px ;
+   padding-left: 15px;
+}
+
+}
+@media (min-width: 1024px) and (max-width: 1250px){
+  .login{
+     border-radius: 30px;
+       width: 40%;
+    text-align: center;
+      padding: 0 20px 20px 20px;
+    
+}
+.auth-main input{
+   width: 80%;
+   border-radius: 8px ;
+   padding-left: 15px;
+}
+.container-login::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 450px;
+  background: url('../../assets/patient_bg.svg') no-repeat left bottom;
+  background-size: contain;
+}
+
+/* Right image (bottom-right) */
+.container-login::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 300px;
+  background: url('../../assets/login_right_bg.svg') no-repeat right bottom;
+  background-size: contain;
+}
+
+}

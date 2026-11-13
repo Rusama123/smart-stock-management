@@ -1,0 +1,321 @@
+/* ============================================
+   FOOTER STYLES - Professional CSS Module
+   ============================================ */
+
+/* Font Family */
+.footer-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin-top: 80px;
+}
+
+/* ============================================
+   CTA Section with Animated Text
+   ============================================ */
+
+.cta-section {
+  background-color: #005A8B;
+  overflow: hidden;
+  position: relative;
+  margin-top: 8rem;
+}
+
+.cta-padding {
+  padding: 2rem 0;
+}
+
+.marquee-container {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-flex;
+  will-change: transform;
+}
+
+.marquee-link {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+  transition: color 0.3s ease;
+}
+
+.marquee-link:hover {
+  color: #1289C8;
+}
+
+.marquee-separator {
+  width: 40px;
+  height: 2px;
+  background-color: #1289C8;
+  display: inline-block;
+  margin: 0 20px;
+  align-self: center;
+}
+
+/* ============================================
+   Footer Main Section
+   ============================================ */
+
+.footer-main1 {
+  background-color: #002B42;
+  padding: 3rem 0;
+}
+
+.footer-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* ============================================
+   Newsletter Section
+   ============================================ */
+
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-form-wrapper {
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.newsletter-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: black;
+  padding: 25px 50px 25px 25px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-input::placeholder {
+  color: #999;
+}
+
+.newsletter-button {
+  position: absolute;
+  right: 8px;
+  background-color: white;
+  color: #1289C8;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #16A34A;
+  color: white;
+}
+
+.newsletter-button svg {
+  transition: all 0.6s ease;
+}
+
+.newsletter-privacy-text {
+  color: white;
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin: 0;
+  text-align: center;
+}
+
+.newsletter-privacy-link {
+  color: #1289C8;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+
+.newsletter-privacy-link:hover {
+  color: #16A34A;
+}
+
+/* ============================================
+   Footer Columns
+   ============================================ */
+
+.footer-column-title {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-item {
+  margin-bottom: 0.75rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #1289C8;
+}
+
+/* ============================================
+   Contact Section
+   ============================================ */
+
+.contact-item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-item-inline {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  transition: fill 0.6s ease;
+}
+
+.contact-icon-address {
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  transition: fill 0.6s ease;
+}
+
+.contact-icon:hover {
+  fill: #16A34A;
+}
+
+.contact-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  transition: color 0.6s ease;
+  cursor: default;
+}
+
+.contact-text:hover {
+  color: #16A34A;
+}
+
+.contact-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.6s ease;
+}
+
+.contact-link:hover {
+  color: #16A34A;
+}
+
+/* ============================================
+   Copyright Section
+   ============================================ */
+
+.copyright-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+.copyright-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.copyright-text {
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section {
+    margin-top: 4rem;
+  }
+
+  .marquee-link {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .newsletter-form-wrapper {
+    max-width: 100%;
+  }
+
+  .footer-column-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main1 {
+    padding: 2rem 0;
+  }
+
+  .footer-content-wrapper {
+    padding: 0 1rem;
+  }
+
+  .newsletter-input {
+    padding: 20px 45px 20px 20px;
+    font-size: 0.9rem;
+  }
+
+  .newsletter-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact-text,
+  .contact-link {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,570 @@
+/* ============================================ */
+/* SUPPLIERS PAGE STYLES */
+/* ============================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F3F4F6;
+}
+
+/* Page Wrapper */
+.suppliers-page-wrapper {
+  flex: 1;
+}
+
+/* Container */
+.container-d {
+  max-width: 1440px ;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.container-s {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.container-s h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Header Section */
+.suppliers-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.h1blue {
+  color: #005A8B !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  margin: 0;
+}
+
+.h1blue i {
+  margin-right: 10px;
+}
+
+/* Action Button */
+.suppliers-action-wrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+.suppliers-action-btn {
+  padding: 10px 24px;
+  background: #005A8B;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.suppliers-action-btn i {
+  margin-right: 6px;
+}
+
+.suppliers-action-btn:hover {
+  background: #004070;
+}
+
+/* ============================================ */
+/* ADMIN MANAGEMENT SECTION STYLES */
+/* ============================================ */
+
+.admin-management-section {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin: 20px auto;
+  max-width: 95%;
+}
+
+.admin-management-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.admin-management-title {
+  color: #005A8B;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-management-title i {
+  margin-right: 10px;
+}
+
+.admin-search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  color: #005A8B;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.search-clear-icon {
+  position: absolute;
+  right: 16px;
+  color: #999999;
+  font-size: 18px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.search-clear-icon:hover {
+  color: #005A8B;
+}
+
+.admin-search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: #005A8B;
+  box-shadow: 0 0 0 3px rgba(0, 90, 139, 0.1);
+}
+
+.admin-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  margin: 0;
+}
+
+.admin-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #005A8B;
+}
+
+.admin-table thead th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: #005A8B;
+  border-bottom: 2px solid #005A8B;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-table thead th i {
+  color: #005A8B;
+  margin-right: 5px;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table tbody td {
+  padding: 14px 12px;
+  font-size: 13px;
+  color: #555555;
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-table-index {
+  font-weight: 600;
+  color: #005A8B;
+}
+
+.admin-table-name {
+  font-weight: 500;
+  color: #333333;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-badge i {
+  margin-right: 4px;
+}
+
+.badge-verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge-unverified {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge-enabled {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.badge-disabled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.subscription-status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.subscription-status i {
+  margin-right: 4px;
+}
+
+.sub-active {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.sub-expired {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.sub-none {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.admin-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.admin-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-btn i {
+  margin-right: 4px;
+}
+
+.admin-btn-disable {
+  background-color: #ffc107;
+  color: #000000;
+}
+
+.admin-btn-disable:hover {
+  background-color: #e0a800;
+}
+
+.admin-btn-enable {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.admin-btn-enable:hover {
+  background-color: #218838;
+}
+
+.admin-btn-subscription {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.admin-btn-subscription:hover {
+  background-color: #0056b3;
+}
+
+.admin-btn-stats {
+  background-color: #17a2b8;
+  color: #ffffff;
+}
+
+.admin-btn-stats:hover {
+  background-color: #138496;
+}
+
+.admin-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.admin-empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  color: #005A8B;
+}
+
+.admin-empty-icon i {
+  font-size: 64px;
+}
+
+.admin-empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555555;
+  margin-bottom: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-empty-text {
+  font-size: 14px;
+  color: #888888;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.admin-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #005A8B;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.admin-loading-text {
+  font-size: 14px;
+  color: #666666;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ============================================ */
+/* OLD SUPPLIERS STYLES (Keep for compatibility) */
+/* ============================================ */
+
+.medicane_suppliers {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+  max-height: 80vh;
+}
+
+.inventory_btn {
+  background-color: #059669;
+  color: white;
+  padding: 10px 55px;
+  border-radius: 8px;
+  border: none;
+}
+
+.inventory_btn:hover {
+  background-color: #037f4c;
+  color: white;
+  border: none;
+  transition: 0.5s ease-in-out;
+}
+
+.inventory-actions a {
+  text-decoration: none;
+}
+
+/* ============================================ */
+/* MODAL STYLES */
+/* ============================================ */
+
+.modal-content {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-header {
+  background-color: #005A8B;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-title i {
+  margin-right: 8px;
+}
+
+.modal-body h5 {
+  color: #005A8B;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-body h5 i {
+  margin-right: 8px;
+}
+
+.modal-body table {
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-body p {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-footer button i {
+  margin-right: 6px;
+}
+
+/* Form Styles in Modal */
+.modal-body .form-label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-body .form-control {
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-body .form-control:focus {
+  border-color: #005A8B;
+  box-shadow: 0 0 0 0.2rem rgba(0, 90, 139, 0.25);
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================ */
+
+@media (max-width: 1200px) {
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-management-section {
+    padding: 16px;
+  }
+
+  .admin-management-title {
+    font-size: 22px;
+  }
+
+  .h1blue {
+    font-size: 22px !important;
+  }
+
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .admin-action-buttons {
+    min-width: 100px;
+  }
+
+  .admin-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .suppliers-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-management-section {
+    padding: 12px;
+  }
+
+  .admin-management-title {
+    font-size: 20px;
+  }
+
+  .h1blue {
+    font-size: 20px !important;
+  }
+
+  .container-d {
+    padding: 5px;
+  }
+}

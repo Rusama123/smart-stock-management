@@ -1,0 +1,569 @@
+/* ═══════════════════════════════════════════════════════════
+   Mediserver ChatbotWidget.css
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ms-primary:    #0F3460;
+  --ms-accent:     #1565C0;
+  --ms-accent-lt:  #E8F0FE;
+  --ms-green:      #00796B;
+  --ms-green-lt:   #E0F2F1;
+  --ms-red:        #C62828;
+  --ms-red-lt:     #FFEBEE;
+  --ms-amber:      #E65100;
+  --ms-amber-lt:   #FFF3E0;
+  --ms-surface:    #FFFFFF;
+  --ms-bg:         #F7F9FC;
+  --ms-border:     #E0E6EF;
+  --ms-border-md:  #C8D3E0;
+  --ms-text:       #0D1B2A;
+  --ms-text-2:     #4A5568;
+  --ms-text-3:     #8FA3BF;
+  --ms-shadow-sm:  0 1px 4px rgba(15,52,96,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --ms-shadow-lg:  0 24px 64px rgba(15,52,96,0.18), 0 8px 24px rgba(0,0,0,0.08);
+  --ms-radius:     14px;
+  --ms-radius-lg:  22px;
+  --ms-font:       'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── FAB ────────────────────────────────────────────────── */
+.ms-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  height: 50px;
+  padding: 0 22px 0 14px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #0F3460 0%, #1565C0 100%);
+  border: none;
+  font-family: var(--ms-font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(15,52,96,0.38);
+  z-index: 9999;
+  transition: box-shadow 0.25s, transform 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.ms-fab:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(15,52,96,0.48); }
+.ms-fab:active { transform: translateY(0); }
+.ms-fab--open  { background: linear-gradient(135deg, #374151 0%, #4B5563 100%); }
+.ms-fab--inventory:not(.ms-fab--open) {
+  background: linear-gradient(135deg, #00695C 0%, #00897B 100%);
+}
+.ms-fab--inventory:not(.ms-fab--open) .fab-pulse { border-color: #00695C; }
+.ms-fab--public:not(.ms-fab--open) {
+  background: linear-gradient(135deg, #0F3460 0%, #1565C0 100%);
+}
+
+.fab-logo-wrap {
+  width: 26px; height: 26px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.fab-pulse {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: #4CAF50;
+  border: 2px solid #0F3460;
+}
+.fab-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(76,175,80,0.45);
+  animation: msPulse 2s ease-out infinite;
+}
+@keyframes msPulse {
+  0%   { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* ─── Chat Window ─────────────────────────────────────────── */
+.ms-window {
+  position: fixed;
+  bottom: 5.8rem;
+  right: 2rem;
+  width: 420px;
+  height: 620px;
+  max-height: calc(100vh - 7.5rem);
+  background: var(--ms-surface);
+  border: 1px solid var(--ms-border);
+  border-radius: var(--ms-radius-lg);
+  display: flex;
+  flex-direction: column;
+  z-index: 9998;
+  box-shadow: var(--ms-shadow-lg);
+  overflow: hidden;
+  font-family: var(--ms-font);
+  transform-origin: bottom right;
+  animation: msSlideIn 0.30s cubic-bezier(0.34, 1.35, 0.64, 1) forwards;
+}
+.ms-window--closing {
+  animation: msSlideOut 0.28s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+@keyframes msSlideIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes msSlideOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(20px) scale(0.95); }
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.ms-header {
+  background: linear-gradient(135deg, #0F3460 0%, #1565C0 100%);
+  padding: 0 1rem;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.header-brand { display: flex; align-items: center; gap: 8px; }
+.header-logo-box {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.header-title { font-weight: 700; color: #fff; font-size: 1.05rem; letter-spacing: -0.02em; line-height: 1; }
+.header-title span { color: #90CAF9; }
+.header-sub { font-size: 0.67rem; color: rgba(255,255,255,0.5); margin-top: 3px; font-weight: 400; letter-spacing: 0.03em; }
+.header-actions { display: flex; align-items: center; gap: 6px; }
+.header-status { display: flex; align-items: center; gap: 5px; margin-right: 4px; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4CAF50; }
+.status-text { font-size: 0.67rem; color: rgba(255,255,255,0.5); }
+.btn-icon {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.75);
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.18s;
+}
+.btn-icon:hover { background: rgba(255,255,255,0.22); color: #fff; }
+
+/* ─── Progress ───────────────────────────────────────────── */
+.ms-progress {
+  background: var(--ms-bg);
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--ms-border);
+  flex-shrink: 0;
+}
+.progress-track {
+  height: 3px; background: var(--ms-border);
+  border-radius: 10px; margin-bottom: 0.4rem; overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1565C0, #42A5F5);
+  border-radius: 10px; transition: width 0.45s ease;
+}
+.progress-labels { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+.prog-label {
+  font-size: 0.61rem; color: var(--ms-text-3);
+  padding: 0.16rem 0.48rem;
+  border-radius: 20px; border: 1px solid var(--ms-border);
+  font-weight: 500; background: var(--ms-surface);
+}
+.prog-label--done  { color: var(--ms-green); border-color: #B2DFDB; background: var(--ms-green-lt); }
+.prog-label--active { color: var(--ms-accent); border-color: #90CAF9; background: var(--ms-accent-lt); }
+
+/* ─── Messages ───────────────────────────────────────────── */
+.ms-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--ms-bg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--ms-border) transparent;
+}
+.ms-messages::-webkit-scrollbar { width: 4px; }
+.ms-messages::-webkit-scrollbar-thumb { background: var(--ms-border-md); border-radius: 4px; }
+
+.ms-msg-wrap { display: flex; align-items: flex-end; gap: 0.45rem; }
+.ms-msg-wrap.user { flex-direction: row-reverse; }
+.ms-msg-wrap.bot  { flex-direction: row; }
+.ms-msg-wrap.wide-msg { align-items: flex-start; }
+.ms-msg-wrap.wide-msg > *:last-child { flex: 1; min-width: 0; }
+
+.bot-avatar {
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #0F3460, #1565C0);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(15,52,96,0.22);
+}
+
+.ms-msg {
+  max-width: 82%;
+  padding: 0.68rem 0.95rem;
+  border-radius: var(--ms-radius);
+  font-size: 0.84rem;
+  line-height: 1.7;
+  word-break: break-word;
+}
+.ms-msg.bot {
+  background: var(--ms-surface);
+  border: 1px solid var(--ms-border);
+  color: var(--ms-text);
+  border-bottom-left-radius: 4px;
+  box-shadow: var(--ms-shadow-sm);
+}
+.ms-msg.user {
+  background: linear-gradient(135deg, #0F3460, #1565C0);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 10px rgba(15,52,96,0.28);
+}
+.msg-warning {
+  background: var(--ms-amber-lt) !important;
+  border: 1px solid #FFCC80 !important;
+  color: var(--ms-amber) !important;
+}
+
+/* Typing dots */
+.ms-msg.typing { display: flex; gap: 5px; align-items: center; padding: 0.75rem 1rem; }
+.ms-msg.typing span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ms-border-md);
+  animation: msBounce 1.3s ease infinite;
+}
+.ms-msg.typing span:nth-child(2) { animation-delay: 0.18s; }
+.ms-msg.typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes msBounce {
+  0%,80%,100% { transform: translateY(0); background: var(--ms-border-md); }
+  40%          { transform: translateY(-6px); background: var(--ms-accent); }
+}
+
+/* ─── Medicine Card ───────────────────────────────────────── */
+.med-card {
+  background: var(--ms-surface);
+  border: 1px solid var(--ms-border);
+  border-radius: var(--ms-radius);
+  overflow: hidden;
+  box-shadow: var(--ms-shadow-sm);
+  width: 100%;
+}
+
+.med-card__condition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0F3460, #1565C0);
+  color: #fff;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+}
+.med-card__condition-icon { font-size: 1rem; }
+
+.med-card__names-section {
+  padding: 0.75rem 1rem 0.6rem;
+  border-bottom: 1px solid var(--ms-border);
+  background: var(--ms-bg);
+}
+.med-card__section-label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ms-text-3);
+  margin-bottom: 0.5rem;
+}
+.med-card__names-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.med-card__name-pill {
+  background: var(--ms-accent-lt);
+  color: var(--ms-accent);
+  border: 1px solid #BBDEFB;
+  border-radius: 100px;
+  padding: 0.22rem 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.med-card__details-section {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--ms-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.med-card__detail-block {
+  background: var(--ms-bg);
+  border: 1px solid var(--ms-border);
+  border-left: 3px solid var(--ms-accent);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+.med-card__detail-name {
+  font-weight: 700;
+  color: var(--ms-primary);
+  font-size: 0.82rem;
+  margin-bottom: 0.4rem;
+}
+.med-card__detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.22rem;
+  font-size: 0.78rem;
+}
+.med-card__detail-key {
+  font-weight: 600;
+  color: var(--ms-text-2);
+  min-width: 68px;
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 1px;
+}
+.med-card__detail-val {
+  color: var(--ms-text);
+  line-height: 1.5;
+}
+.freq-badge {
+  background: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #C8E6C9;
+  border-radius: 6px;
+  padding: 0.08rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.med-card__advice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0.65rem 1rem;
+  background: #FFF8E1;
+  border-bottom: 1px solid var(--ms-border);
+  font-size: 0.78rem;
+  color: #5D4037;
+  line-height: 1.55;
+}
+.med-card__advice-icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+.med-card__disclaimer {
+  padding: 0.5rem 1rem;
+  font-size: 0.68rem;
+  color: var(--ms-text-3);
+  font-style: italic;
+  line-height: 1.5;
+  background: var(--ms-surface);
+}
+
+/* ─── Input Area ─────────────────────────────────────────── */
+.ms-input-area {
+  padding: 0.75rem 0.9rem 0.7rem;
+  border-top: 1px solid var(--ms-border);
+  background: var(--ms-surface);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+.btn-option {
+  padding: 0.52rem 0.6rem;
+  background: var(--ms-bg);
+  border: 1px solid var(--ms-border);
+  border-radius: 10px;
+  color: var(--ms-text);
+  font-size: 0.79rem; font-weight: 500;
+  cursor: pointer; font-family: var(--ms-font);
+  transition: all 0.15s; text-align: center;
+}
+.btn-option:hover {
+  background: var(--ms-accent-lt);
+  border-color: #90CAF9;
+  color: var(--ms-accent);
+  transform: translateY(-1px);
+}
+
+.multi-list { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.4rem; }
+.multi-opt {
+  display: flex; align-items: center; gap: 0.55rem;
+  background: var(--ms-bg);
+  border: 1px solid var(--ms-border);
+  border-radius: 10px;
+  padding: 0.48rem 0.75rem;
+  cursor: pointer; font-size: 0.8rem;
+  color: var(--ms-text-2);
+  transition: all 0.15s; user-select: none;
+  font-family: var(--ms-font);
+}
+.multi-opt:hover { background: var(--ms-accent-lt); border-color: #90CAF9; }
+.multi-opt--on { background: var(--ms-accent-lt); border-color: var(--ms-accent); color: var(--ms-accent); font-weight: 600; }
+.multi-check {
+  width: 18px; height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid var(--ms-border-md);
+  background: var(--ms-surface);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 800; color: var(--ms-accent);
+  flex-shrink: 0; transition: all 0.15s;
+}
+.multi-opt--on .multi-check { border-color: var(--ms-accent); background: var(--ms-accent-lt); }
+
+.btn-continue {
+  width: 100%; padding: 0.6rem;
+  background: linear-gradient(135deg, #0F3460, #1565C0);
+  border: none; border-radius: 10px;
+  color: #fff; font-weight: 600; font-size: 0.84rem;
+  cursor: pointer; font-family: var(--ms-font); transition: all 0.18s;
+}
+.btn-continue:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(15,52,96,0.3); }
+
+.ms-text-input { display: flex; gap: 0.4rem; align-items: center; }
+.ms-text-input input {
+  flex: 1;
+  background: var(--ms-bg);
+  border: 1.5px solid var(--ms-border);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  color: var(--ms-text);
+  font-size: 0.83rem; outline: none;
+  font-family: var(--ms-font);
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.ms-text-input input:focus {
+  border-color: var(--ms-accent);
+  box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+  background: var(--ms-surface);
+}
+.ms-text-input input::placeholder { color: var(--ms-text-3); }
+.ms-text-input input:disabled { opacity: 0.5; }
+.ms-text-input button {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, #0F3460, #1565C0);
+  border: none; border-radius: 10px;
+  color: #fff; cursor: pointer; flex-shrink: 0;
+  transition: all 0.18s;
+  display: flex; align-items: center; justify-content: center;
+}
+.ms-text-input button:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(15,52,96,0.3); }
+.ms-text-input button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.btn-new-consult {
+  width: 100%; padding: 0.5rem;
+  background: var(--ms-bg);
+  border: 1.5px solid var(--ms-border);
+  border-radius: 10px;
+  color: var(--ms-text-2);
+  font-size: 0.78rem; font-weight: 500;
+  cursor: pointer; font-family: var(--ms-font); transition: all 0.18s;
+}
+.btn-new-consult:hover {
+  background: var(--ms-accent-lt);
+  border-color: #90CAF9;
+  color: var(--ms-accent);
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.ms-footer {
+  padding: 0.42rem 0.9rem;
+  text-align: center;
+  font-size: 0.63rem;
+  color: var(--ms-text-3);
+  border-top: 1px solid var(--ms-border);
+  background: var(--ms-surface);
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+.ms-footer strong { color: var(--ms-text-2); font-weight: 600; }
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .ms-window {
+    width: calc(100vw - 1.5rem);
+    right: 0.75rem; left: 0.75rem;
+    bottom: 5rem; max-height: calc(100vh - 6rem);
+    border-radius: 18px;
+  }
+  .ms-fab { right: 1rem; bottom: 1rem; }
+}
+@media (max-width: 360px) {
+  .ms-window {
+    width: 100vw; right: 0; left: 0; bottom: 0;
+    border-radius: 18px 18px 0 0; max-height: 85vh;
+  }
+  .ms-fab { right: 0.75rem; bottom: 0.75rem; }
+}
+/* ── ADD THESE RULES TO YOUR ChatbotWidget.css ── */
+
+/* Fix text overflow in all message bubbles and cards */
+.ms-msg,
+.med-card,
+.med-card__detail-val,
+.med-card__name-pill,
+.med-card__advice,
+.med-card__condition {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  min-width: 0;
+}
+
+/* Ensure the message wrapper doesn't clip content */
+.ms-msg-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Pills should wrap instead of overflow */
+.med-card__names-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.med-card__name-pill {
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+/* Detail rows — value side wraps */
+.med-card__detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.med-card__detail-val {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}

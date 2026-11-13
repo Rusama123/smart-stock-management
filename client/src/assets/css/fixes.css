@@ -1,0 +1,459 @@
+.header .topbar-auth-buttons {
+  gap: 10px;
+}
+
+.header .topbar-auth-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 5px 14px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  background: color-mix(in srgb, var(--background-color), transparent 5%);
+  color: var(--heading-color);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+
+.header .topbar-auth-btn:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.header .topbar-auth-btn.register {
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+}
+
+.header .topbar-auth-btn.register:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.footer-16 .footer-bottom .legal-links {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+
+.pricing-modern {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), transparent 95%) 0%, #ffffff 100%);
+}
+
+.pricing-modern .pricing-heading {
+  margin-bottom: 26px;
+}
+
+.pricing-modern .pricing-heading h2 {
+  margin-bottom: 10px;
+  font-size: clamp(1.9rem, 2.4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.pricing-modern .pricing-heading p {
+  margin: 0 auto;
+  max-width: 760px;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+.pricing-controls-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.pricing-segment-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 94%);
+  flex-wrap: wrap;
+}
+
+.pricing-segment-control button {
+  border: none;
+  background: transparent;
+  color: var(--default-color);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-segment-control button.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing-segment-control button:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+.pricing-segment-control button.active:hover {
+  background: color-mix(in srgb, var(--accent-color), black 8%);
+}
+
+.duration-control .duration-badge {
+  font-size: 11px;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.team-size-panel {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+  background: var(--surface-color);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.team-size-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.team-size-head h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.team-size-head strong {
+  font-size: 15px;
+  color: var(--accent-color);
+}
+
+.team-size-panel input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent-color);
+}
+
+.team-size-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.pricing-plan-card {
+  height: 100%;
+  border-radius: 20px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  padding: 28px 22px;
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--default-color), transparent 94%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-plan-card.popular {
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 25%);
+  transform: translateY(-3px);
+}
+
+.pricing-plan-card .popular-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.pricing-plan-card h3 {
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.pricing-plan-card .plan-subtitle {
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  min-height: 42px;
+  margin-bottom: 14px;
+}
+
+.pricing-plan-card .plan-price {
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.pricing-plan-card .plan-price span {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.pricing-plan-card .plan-meta {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.plan-feature-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.plan-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.plan-feature-list li i {
+  color: var(--accent-color);
+  margin-top: 2px;
+}
+
+.plan-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.plan-pay-btn,
+.plan-contact-btn {
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  padding: 11px 12px;
+  width: 100%;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.plan-pay-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.plan-pay-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), black 10%);
+}
+
+.plan-contact-btn {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+.plan-contact-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+
+.pricing-bottom-note {
+  margin: 24px 0 0;
+  text-align: center;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 14px;
+}
+
+.pricing-payment-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 16, 32, 0.6);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.pricing-payment-modal {
+  width: 100%;
+  max-width: 470px;
+  background: var(--surface-color);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+.payment-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.payment-modal-header h4 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.payment-modal-header p {
+  margin: 0;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.payment-modal-header button {
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.payment-input-group {
+  margin-bottom: 12px;
+}
+
+.payment-input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.payment-input-group input {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 9px;
+  padding: 11px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.payment-input-group input:focus {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 35%);
+}
+
+.payment-error {
+  margin: 0 0 12px;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 13px;
+  background: #fff1f1;
+  color: #b91c1c;
+}
+
+.payment-summary {
+  border-radius: 11px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.payment-summary div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.payment-summary div:last-child {
+  margin-bottom: 0;
+}
+
+.payment-summary .summary-total {
+  border-top: 1px dashed color-mix(in srgb, var(--default-color), transparent 75%);
+  margin-top: 7px;
+  padding-top: 9px;
+  font-size: 15px;
+}
+
+.payment-submit-btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-weight: 700;
+}
+
+.payment-submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.payment-caption {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+.appointment-status {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.appointment-status.loading {
+  background: #edf5ff;
+  color: #1d4ed8;
+}
+
+.appointment-status.success {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+@media (max-width: 991px) {
+  .plan-actions {
+    flex-direction: column;
+  }
+
+  .pricing-plan-card .plan-subtitle {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing-segment-control button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-segment-control {
+    width: 100%;
+  }
+
+  .payment-modal-header h4 {
+    font-size: 18px;
+  }
+}

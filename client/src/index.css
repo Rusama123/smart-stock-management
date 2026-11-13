@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+ 
+  --color-light-blue: #1289C8;
+  --color-blue: #005A8B;
+  --color-dark-blue: #002B42;
+ 
+  --color-green:#16A34A;
+}
+
+
+:root {
+  --color-primary: #1C1B54;
+  --color-secondary: #37C3E7;
+  --color-green: #4AB950;
+  --color-black: #000000;
+  --color-btn:#059669;
+  --font-heading:'Montserrat';
+  --font-size-h: 40px;
+  --font-waight-bold: 700;
+  --font-waight-light: 400;
+  --font-size-p: 20px;
+  --color-border:#989898;
+  --color-white:#ffffff;
+  --color-header-bg: #1E3A8A;
+  --color-header-btn:#EC221F;
+}
+
+.bg-paleblue {
+  background-color: var(--color-paleblue);
+}
+
+.bg-light-blue {
+  background-color: var(--color-light-blue);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.bg-dark-blue {
+  background-color: var(--color-dark-blue);
+}
+
+.border-light-blue {
+  border-color: var(--color-light-blue);
+}
+
+.border-blue {
+  border-color: var(--color-blue);
+}
+
+.text-blue {
+  color: var(--color-blue);
+}
+
+.text-dark-blue {
+  color: var(--color-dark-blue);
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+.placeholder-gray::placeholder {
+  color: var(--color-gray);
+}
+
+.hover\:bg-blue:hover {
+  background-color: var(--color-blue);
+}
+
+.hover\:bg-dark-blue:hover {
+  background-color: var(--color-dark-blue);
+}
+
+.hover\:border-blue:hover {
+  border-color: var(--color-blue);
+}
+
+.ontainer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;          
+
+  justify-content: center;     
+  align-items: center;                
+  overflow: hidden;            
+}

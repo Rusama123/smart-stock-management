@@ -1,0 +1,751 @@
+/* ============================================================
+   DASHBOARD CSS — FULLY RESPONSIVE, NO FLEX-EXPAND ANIMATION
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F3F4F6;
+}
+
+/* ===== CONTAINER ===== */
+.container-d {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px !important;
+  background-color: #F3F4F6;
+}
+
+.dashbord {
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.col {
+  margin: 0px;
+  padding: 0px;
+}
+
+.row {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ===== STAT CARDS ROW ===== */
+.Boxs {
+  display: flex;
+  gap: 15px;
+  padding: 10px 20px 20px 20px;
+  flex-wrap: wrap;
+  margin: 0px !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== STAT CARD — MODERN LEFT BORDER LAYOUT ===== */
+.stat-card-custom {
+  padding: 0 6px !important;
+  margin-bottom: 12px;
+  flex: 1;
+  min-width: 0 !important;
+}
+
+.stat-card-inner {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-custom:hover .stat-card-inner {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.flex-between-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.stat-title-custom {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.stat-icon-custom {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 9px !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.3s ease;
+}
+
+.stat-icon-custom img,
+.stat-icon-custom svg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.stat-card-custom:hover .stat-icon-custom {
+  transform: scale(1.08);
+}
+
+.stat-value-custom {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: left;
+  transition: color 0.35s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  word-break: break-word;
+  margin-top: 4px;
+}
+
+/* --- Dynamic Themes for Cards --- */
+
+/* Card 1: Sky Blue Theme */
+.stat-card-custom:nth-child(4n+1) .stat-card-inner {
+  border-left: 4px solid #0284c7 !important;
+}
+.stat-card-custom:nth-child(4n+1) .stat-icon-custom {
+  background-color: #e0f2fe !important;
+}
+.stat-card-custom:nth-child(4n+1) .stat-icon-custom img,
+.stat-card-custom:nth-child(4n+1) .stat-icon-custom svg {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(87%) saturate(1478%) hue-rotate(179deg) brightness(91%) contrast(101%) !important;
+}
+.stat-card-custom:nth-child(4n+1):hover .stat-card-inner {
+  border-color: #bae6fd;
+  background-color: #fafcff;
+}
+
+/* Card 2: Amber Yellow Theme */
+.stat-card-custom:nth-child(4n+2) .stat-card-inner {
+  border-left: 4px solid #f59e0b !important;
+}
+.stat-card-custom:nth-child(4n+2) .stat-icon-custom {
+  background-color: #fef3c7 !important;
+}
+.stat-card-custom:nth-child(4n+2) .stat-icon-custom img,
+.stat-card-custom:nth-child(4n+2) .stat-icon-custom svg {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(1021%) hue-rotate(14deg) brightness(101%) contrast(97%) !important;
+}
+.stat-card-custom:nth-child(4n+2):hover .stat-card-inner {
+  border-color: #fde68a;
+  background-color: #fffdf5;
+}
+
+/* Card 3: Rose Red Theme */
+.stat-card-custom:nth-child(4n+3) .stat-card-inner {
+  border-left: 4px solid #ef4444 !important;
+}
+.stat-card-custom:nth-child(4n+3) .stat-icon-custom {
+  background-color: #fee2e2 !important;
+}
+.stat-card-custom:nth-child(4n+3) .stat-icon-custom img,
+.stat-card-custom:nth-child(4n+3) .stat-icon-custom svg {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(4155%) hue-rotate(345deg) brightness(96%) contrast(93%) !important;
+}
+.stat-card-custom:nth-child(4n+3):hover .stat-card-inner {
+  border-color: #fecaca;
+  background-color: #fffafa;
+}
+
+/* Card 4: Emerald Green Theme */
+.stat-card-custom:nth-child(4n) .stat-card-inner {
+  border-left: 4px solid #10b981 !important;
+}
+.stat-card-custom:nth-child(4n) .stat-icon-custom {
+  background-color: #dcfce7 !important;
+}
+.stat-card-custom:nth-child(4n) .stat-icon-custom img,
+.stat-card-custom:nth-child(4n) .stat-icon-custom svg {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(96%) saturate(372%) hue-rotate(107deg) brightness(92%) contrast(85%) !important;
+}
+.stat-card-custom:nth-child(4n):hover .stat-card-inner {
+  border-color: #a7f3d0;
+  background-color: #f6fff9;
+}
+
+/* ===== HEADING ===== */
+:root {
+  --color-blue: #005A8B;
+}
+
+.h1blue {
+  color: var(--color-blue) !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* ===== INVENTORY ===== */
+.inventory-container {
+  padding: 20px;
+}
+
+.inventory {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inventory h2 {
+  color: var(--color-blue);
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 26px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.inventory-graph {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  min-height: 200px;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+/* ===== ADMIN MANAGEMENT SECTION ===== */
+.admin-management-section {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin: 20px auto;
+  max-width: 95%;
+}
+
+.admin-management-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.admin-management-title {
+  color: #005A8B;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ===== SEARCH BAR ===== */
+.admin-search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  color: #005A8B;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.search-clear-icon {
+  position: absolute;
+  right: 16px;
+  color: #999999;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.search-clear-icon:hover {
+  color: #005A8B;
+}
+
+.admin-search-input {
+  width: 100%;
+  padding: 12px 48px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: #005A8B;
+  box-shadow: 0 0 0 3px rgba(0, 90, 139, 0.1);
+}
+
+/* ===== TABLE ===== */
+.admin-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  margin: 0;
+  min-width: 600px; /* ensures horizontal scroll on small screens */
+}
+
+.admin-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #005A8B;
+}
+
+.admin-table thead th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: #005A8B;
+  border-bottom: 2px solid #005A8B;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table tbody td {
+  padding: 14px 12px;
+  font-size: 13px;
+  color: #555555;
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-table-index {
+  font-weight: 600;
+  color: #005A8B;
+}
+
+.admin-table-name {
+  font-weight: 500;
+  color: #333333;
+}
+
+/* ===== BADGES ===== */
+.admin-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.badge-verified   { background-color: #d4edda; color: #155724; }
+.badge-unverified { background-color: #fff3cd; color: #856404; }
+.badge-enabled    { background-color: #d1ecf1; color: #0c5460; }
+.badge-disabled   { background-color: #f8d7da; color: #721c24; }
+
+.subscription-status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sub-active  { background-color: #28a745; color: #ffffff; }
+.sub-expired { background-color: #dc3545; color: #ffffff; }
+.sub-none    { background-color: #6c757d; color: #ffffff; }
+
+/* ===== ACTION BUTTONS ===== */
+.admin-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 110px;
+}
+
+.admin-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-btn-disable      { background-color: #ffc107; color: #000000; }
+.admin-btn-disable:hover{ background-color: #e0a800; }
+.admin-btn-enable       { background-color: #28a745; color: #ffffff; }
+.admin-btn-enable:hover { background-color: #218838; }
+.admin-btn-subscription       { background-color: #007bff; color: #ffffff; }
+.admin-btn-subscription:hover { background-color: #0056b3; }
+.admin-btn-stats       { background-color: #17a2b8; color: #ffffff; }
+.admin-btn-stats:hover { background-color: #138496; }
+
+/* ===== EMPTY STATE ===== */
+.admin-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.admin-empty-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  color: #005A8B;
+}
+
+.admin-empty-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.admin-empty-text {
+  font-size: 14px;
+  color: #888888;
+}
+
+/* ===== LOADING ===== */
+.admin-loading {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.admin-loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #005A8B;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.admin-loading-text {
+  font-size: 14px;
+  color: #666666;
+}
+
+/* ===== MISC ===== */
+.table { margin-top: 20px; }
+.table thead { background-color: #343a40; color: white; }
+.table-striped tbody tr:nth-of-type(odd) { background-color: rgba(0,0,0,0.02); }
+.table-hover tbody tr:hover { background-color: rgba(0,90,139,0.05); }
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-active  { background-color: #d4edda; color: #155724; }
+.status-expired { background-color: #f8d7da; color: #721c24; }
+.status-none    { background-color: #fff3cd; color: #856404; }
+.status-unknown { background-color: #d1ecf1; color: #0c5460; }
+
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: var(--color-blue);
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.modal-header .btn-close { filter: brightness(0) invert(1); }
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Large desktops (1200px+) — default styles above apply */
+
+/* Medium desktops / tablets landscape (max 1200px) */
+@media (max-width: 1200px) {
+  .stat-card-inner {
+    padding: 16px;
+  }
+
+  .stat-title-custom {
+    font-size: 13px;
+  }
+
+  .stat-value-custom {
+    font-size: 16px;
+  }
+
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Tablets portrait (max 992px) */
+@media (max-width: 992px) {
+  .container-d {
+    padding: 14px !important;
+  }
+
+  .stat-card-custom {
+    padding: 0 4px !important;
+  }
+
+  .stat-card-inner {
+    padding: 14px;
+  }
+
+  .stat-title-custom {
+    font-size: 12px;
+  }
+
+  .stat-value-custom {
+    font-size: 15px;
+  }
+
+  .stat-icon-custom {
+    width: 24px;
+    height: 24px;
+  }
+
+  .admin-management-section {
+    padding: 18px;
+    max-width: 100%;
+    margin: 14px auto;
+  }
+
+  .admin-management-title {
+    font-size: 20px;
+  }
+}
+
+/* Small tablets / large phones (max 768px) */
+@media (max-width: 768px) {
+  .container-d {
+    padding: 10px !important;
+  }
+
+  /* Stack cards 2x2 on tablets */
+  .row.mx-1.mb-1 {
+    flex-wrap: wrap;
+  }
+
+  .stat-card-custom {
+    flex: 0 0 calc(50% - 6px) !important;
+    max-width: calc(50% - 6px);
+    padding: 0 4px !important;
+    margin-bottom: 10px;
+  }
+
+  .stat-card-inner {
+    padding: 14px 12px;
+    min-height: 90px;
+  }
+
+  .stat-title-custom {
+    font-size: 12px;
+  }
+
+  .stat-value-custom {
+    font-size: 14px;
+  }
+
+  .stat-icon-custom {
+    width: 22px;
+    height: 22px;
+  }
+
+  .admin-management-section {
+    padding: 14px;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+
+  .admin-management-title {
+    font-size: 18px;
+  }
+
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .admin-action-buttons {
+    min-width: 90px;
+  }
+
+  .admin-btn {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .dashbord h1 {
+    font-size: 22px !important;
+  }
+}
+
+/* Mobile phones (max 576px) */
+@media (max-width: 576px) {
+  .container-d {
+    padding: 8px !important;
+  }
+
+  /* Cards still 2x2 on phones */
+  .stat-card-custom {
+    flex: 0 0 calc(50% - 5px) !important;
+    max-width: calc(50% - 5px);
+    padding: 0 3px !important;
+    margin-bottom: 8px;
+  }
+
+  .stat-card-inner {
+    padding: 12px 10px;
+    min-height: 84px;
+    border-radius: 10px;
+  }
+
+  .stat-title-custom {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .stat-value-custom {
+    font-size: 13px;
+  }
+
+  .stat-icon-custom {
+    width: 20px;
+    height: 20px;
+  }
+
+  .flex-between-custom {
+    margin-bottom: 8px;
+  }
+
+  .admin-management-section {
+    padding: 12px 10px;
+    margin: 8px auto;
+    border-radius: 10px;
+  }
+
+  .admin-management-title {
+    font-size: 16px;
+  }
+
+  .admin-search-input {
+    font-size: 13px;
+    padding: 10px 44px;
+  }
+
+  .admin-empty-state {
+    padding: 40px 16px;
+  }
+
+  .admin-empty-icon {
+    font-size: 44px;
+  }
+
+  .dashbord h1 {
+    font-size: 20px !important;
+  }
+}
+
+/* Very small phones (max 360px) */
+@media (max-width: 360px) {
+  .stat-card-inner {
+    padding: 10px 8px;
+    min-height: 76px;
+  }
+
+  .stat-title-custom {
+    font-size: 10px;
+  }
+
+  .stat-value-custom {
+    font-size: 12px;
+  }
+
+  .stat-icon-custom {
+    width: 18px;
+    height: 18px;
+  }
+
+  .admin-management-title {
+    font-size: 15px;
+  }
+
+  .dashbord h1 {
+    font-size: 18px !important;
+  }
+}
+
+/* Prevent modal-open layout shift */
+html {
+  overflow-y: scroll !important;
+}
+body.modal-open {
+  padding-right: 0 !important;
+}

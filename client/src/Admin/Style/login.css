@@ -1,0 +1,329 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --color-primary: #1C1B54;
+  --color-secondary: #37C3E7;
+  --color-green: #4AB950;
+  --color-black: #000000;
+  --color-btn: #005A8B;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-size-h: 36px;
+  --font-weight-bold: 700;
+  --font-weight-light: 400;
+  --font-size-p: 16px;
+  --color-border: #989898;
+  --color-white: #ffffff;
+  --color-header-bg: #1E3A8A;
+  --color-header-btn: #EC221F;
+}
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== AUTH MAIN WRAPPER ===== */
+.auth-main {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F3F4F6 url('../../assets/login_bg.svg') center / cover no-repeat;
+  overflow-x: hidden;
+}
+
+/* ===== CONTAINER ===== */
+.container-login {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+}
+
+/* ===== DECORATIVE IMAGES (hidden on small screens) ===== */
+.container-login::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 400px;
+  height: 500px;
+  background: url('../../assets/patient_bg.svg') no-repeat left bottom;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.container-login::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  width: 250px;
+  height: 350px;
+  background: url('../../assets/login_right_bg.svg') no-repeat right bottom;
+  background-size: contain;
+  pointer-events: none;
+}
+
+/* ===== LOGIN CARD ===== */
+.login {
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px 32px 28px;
+  margin: 24px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* ===== HEADINGS & TEXT ===== */
+.auth-main h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  margin: 0 0 6px 0;
+}
+
+.auth-main p {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-light);
+  color: #555;
+  margin: 0;
+}
+
+.f-heading {
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.p-credentials {
+  margin-bottom: 18px;
+  margin-top: 6px;
+}
+
+/* ===== BRAND COLORS ===== */
+.ip { color: var(--color-primary); }
+.i  { color: var(--color-secondary); }
+.m  { color: var(--color-green); }
+
+/* ===== FORM INPUTS ===== */
+.auth-main .form-control,
+.auth-main .form-select {
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px 15px;
+  border: 1px solid var(--color-border);
+  height: 44px;
+  font-size: 14px;
+  font-family: var(--font-heading);
+}
+
+.auth-main .form-control:focus,
+.auth-main .form-select:focus {
+  border-color: var(--color-btn);
+  box-shadow: 0 0 0 0.2rem rgba(0, 90, 139, 0.15);
+  outline: none;
+}
+
+.input {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* ===== LOGIN BOX (inner) ===== */
+.login-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0;
+}
+
+/* ===== BUTTON ===== */
+.btn-login {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--color-btn);
+  border-radius: 8px;
+  border: none;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover:not(:disabled) {
+  background-color: var(--color-primary);
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===== LINKS ===== */
+.auth-main a {
+  text-decoration: none;
+  color: var(--color-btn);
+}
+
+.auth-main a:hover {
+  color: var(--color-primary);
+  transition: 0.3s ease;
+}
+
+/* ===== MISC ===== */
+.forget {
+  margin-right: auto;
+  margin-top: 4px;
+}
+
+.remember {
+  width: 15px;
+  height: 15px;
+}
+
+/* ===== EYE ICON WRAPPER ===== */
+.password-wrapper {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #6c757d;
+  user-select: none;
+  z-index: 10;
+}
+
+.eye-icon-error {
+  right: 36px;
+}
+
+
+/* ============================================================
+   MEDIA QUERIES — RESPONSIVE
+   ============================================================ */
+
+/* Tablets (max 1024px) — hide decorative side images */
+@media (max-width: 1024px) {
+  .container-login::before,
+  .container-login::after {
+    display: none;
+  }
+
+  .login {
+    max-width: 500px;
+    padding: 28px 28px 24px;
+  }
+}
+
+/* Small tablets / large phones (max 768px) */
+@media (max-width: 768px) {
+  .auth-main h2 {
+    font-size: 28px;
+  }
+
+  .auth-main p {
+    font-size: 14px;
+  }
+
+  .login {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+    margin: 16px 0;
+  }
+
+  .container-login {
+    padding: 16px 12px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .btn-login {
+    font-size: 14px;
+    padding: 11px 16px;
+  }
+}
+
+/* Mobile phones (max 480px) */
+@media (max-width: 480px) {
+  .auth-main h2 {
+    font-size: 24px;
+  }
+
+  .auth-main p {
+    font-size: 13px;
+  }
+
+  .login {
+    padding: 20px 14px 18px;
+    border-radius: 12px;
+    margin: 10px 0;
+  }
+
+  .container-login {
+    padding: 12px 8px;
+    padding-top: 30px;
+  }
+
+  .auth-main .form-control,
+  .auth-main .form-select {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .btn-login {
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .f-heading {
+    margin-top: 12px;
+  }
+
+  .p-credentials {
+    margin-bottom: 14px;
+  }
+}
+
+/* Very small phones (max 360px) */
+@media (max-width: 360px) {
+  .auth-main h2 {
+    font-size: 21px;
+  }
+
+  .login {
+    padding: 16px 10px 14px;
+  }
+
+  .auth-main .form-control,
+  .auth-main .form-select {
+    height: 40px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

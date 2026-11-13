@@ -1,0 +1,1334 @@
+/* ============================================ */
+/* INVENTORY PAGE STYLES */
+/* ============================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F3F4F6;
+}
+
+/* Page Wrapper */
+.inventory-page-wrapper {
+  flex: 1;
+}
+
+/* Container */
+.container-d {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.container-i {
+  max-width: 1440px;
+  width: 100%;
+ 
+  padding: 0px 20px;
+  overflow: hidden;
+}
+
+/* Header Section */
+.inventory-header-section {
+   /* display: flex;  */
+  margin-left: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.h1blue {
+  color: #005A8B !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+
+  margin-bottom: 10px !important;
+}
+
+.h1blue i {
+  margin-right: 10px;
+}
+
+/* Action Buttons Wrapper */
+.inventory-action-buttons-wrapper {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.inventory-action-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
+}
+
+.inventory-action-btn i {
+  margin-right: 6px;
+}
+
+.btn-sell {
+  background: #28a745;
+}
+
+.btn-sell:hover {
+  background: #218838;
+}
+
+.btn-add-stock {
+  background: #007bff;
+}
+
+.btn-add-stock:hover {
+  background: #0056b3;
+}
+
+.btn-add-drug {
+  background: #005A8B;
+}
+
+.btn-add-drug:hover {
+  background: #004070;
+}
+
+/* Filter Wrapper */
+.inventory-filter-wrapper {
+     display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: end;
+    flex-wrap: wrap;
+    margin-top: -35px;
+}
+
+.inventory-category-select {
+  padding: 10px 24px;
+  border: 2px solid #005A8B;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #ffffff;
+  color: #005A8B;
+}
+
+.inventory-category-select:focus {
+  outline: none;
+  background: #005A8B;
+  color: #ffffff;
+}
+
+.inventory-category-select option {
+  background: #ffffff;
+  color: #333333;
+}
+
+/* Price Styling */
+.inventory-price {
+  font-size: 13px !important;
+  font-weight: bold !important;
+}
+
+/* Pagination */
+.inventory-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.inventory-pagination-text {
+  margin: 0;
+  font-size: 13px;
+  color: #555555;
+}
+
+.inventory-pagination-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.inventory-pagination-btn {
+  padding: 8px 20px;
+  background: #005A8B;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.inventory-pagination-btn:hover:not(.disabled) {
+  background: #004070;
+}
+
+.inventory-pagination-btn.disabled {
+  background: #e0e0e0;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+.inventory-pagination-btn i {
+  margin: 0 5px;
+}
+
+/* ============================================ */
+/* ADMIN MANAGEMENT SECTION STYLES */
+/* ============================================ */
+
+.admin-management-section {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin: 20px auto;
+  max-width: 95%;
+}
+
+.admin-management-header {
+  text-align: start !important;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.admin-management-title {
+  color: #005A8B;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-management-title i {
+  margin-right: 10px;
+}
+
+.admin-search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  color: #005A8B;
+  font-size: 18px;
+  pointer-events: none;
+  padding-bottom: 8px;
+}
+
+.search-clear-icon {
+  position: absolute;
+  right: 16px;
+  color: #999999;
+  font-size: 18px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+    
+}
+
+.search-clear-icon:hover {
+  color: #005A8B;
+}
+
+.admin-search-input {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: #005A8B;
+  box-shadow: 0 0 0 3px rgba(0, 90, 139, 0.1);
+}
+
+.admin-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  margin: 0;
+}
+
+.admin-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #005A8B;
+}
+
+.admin-table thead th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: #005A8B;
+  border-bottom: 2px solid #005A8B;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-table thead th i {
+  color: #005A8B;
+  margin-right: 5px;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table tbody td {
+  padding: 14px 12px;
+  font-size: 13px;
+  color: #555555;
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-table-index {
+  font-weight: 600;
+  color: #005A8B;
+}
+
+.admin-table-name {
+  font-weight: 500;
+  color: #333333;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.badge-verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge-unverified {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge-enabled {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.badge-disabled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.subscription-status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.subscription-status i {
+  margin-right: 4px;
+}
+
+.sub-active {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.sub-expired {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.sub-none {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.admin-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.admin-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-btn i {
+  margin-right: 4px;
+}
+
+.admin-btn-disable {
+  background-color: #ffc107;
+  color: #000000;
+}
+
+.admin-btn-disable:hover {
+  background-color: #e0a800;
+}
+
+.admin-btn-enable {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.admin-btn-enable:hover {
+  background-color: #218838;
+}
+
+.admin-btn-subscription {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.admin-btn-subscription:hover {
+  background-color: #0056b3;
+}
+
+.admin-btn-stats {
+  background-color: #17a2b8;
+  color: #ffffff;
+}
+
+.admin-btn-stats:hover {
+  background-color: #138496;
+}
+
+.admin-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.admin-empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  color: #005A8B;
+}
+
+.admin-empty-icon i {
+  font-size: 64px;
+}
+
+.admin-empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555555;
+  margin-bottom: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-empty-text {
+  font-size: 14px;
+  color: #888888;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.admin-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #005A8B;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.admin-loading-text {
+  font-size: 14px;
+  color: #666666;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ============================================ */
+/* OLD INVENTORY STYLES (Keep for compatibility) */
+/* ============================================ */
+
+.inventory_btn {
+  background-color: #059669;
+  color: white;
+  padding: 10px 55px;
+  border-radius: 8px;
+  border: none;
+}
+
+.inventory_btn:hover {
+  background-color: #037f4c;
+  color: white;
+  border: none;
+  transition: 0.5s ease-in-out;
+}
+
+.input_search {
+  width: 75%;
+}
+
+.search {
+  background-color: white;
+  border-radius: 10px;
+  padding: 18px 23px;
+}
+
+.input_search input {
+  padding: 23px;
+}
+
+.Categories-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: white;
+  color: #000000;
+}
+
+.Categories-btn:hover {
+  background-color: #059669;
+  color: white;
+  border: none;
+  transition: 0.5s ease-in-out;
+}
+
+.Categories-btn img {
+  width: 14px;
+  padding-left: 4px;
+}
+
+.medicane_data {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.inventory-actions a {
+  text-decoration: none;
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================ */
+
+@media (max-width: 1200px) {
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-management-section {
+    padding: 16px;
+  }
+  
+  .admin-management-title {
+    font-size: 22px;
+  }
+  
+  .h1blue {
+    font-size: 22px !important;
+  }
+  
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+  
+  .admin-action-buttons {
+    min-width: 100px;
+  }
+  
+  .admin-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  
+  .inventory-action-buttons-wrapper {
+    flex-direction: column;
+  }
+  
+  .inventory-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .inventory-pagination {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .inventory-pagination-buttons {
+    width: 100%;
+  }
+  
+  .inventory-pagination-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-management-section {
+    padding: 12px;
+  }
+  
+  .admin-management-title {
+    font-size: 20px;
+  }
+  
+  .h1blue {
+    font-size: 20px !important;
+  }
+  
+  .container-d {
+    padding: 5px;
+  }
+}
+
+/* ============================================ */
+/* AI INSIGHTS / SMART HUB TABLE               */
+/* ============================================ */
+
+.ai-insights-panel {
+  max-width: 100%;
+}
+
+.ai-advisory-banner {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+
+.ai-advisory-banner code {
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.ai-advisory-banner--gemini {
+  background: #e8f5ee;
+  border: 1px solid #b8dfc8;
+  color: #1a5c36;
+}
+
+.ai-advisory-banner--fallback {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+}
+
+.ai-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.ai-insights-table {
+  margin-bottom: 0;
+  font-size: 13px;
+  width: 100%;
+  table-layout: auto;
+}
+
+.ai-insights-table thead th {
+  background: #f8fafc;
+  color: #374151;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.ai-insights-table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #f0f1f3;
+  vertical-align: middle;
+}
+
+.ai-insights-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ai-insights-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+.ai-med-cell {
+  min-width: 140px;
+  max-width: 220px;
+}
+
+.ai-med-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ai-med-name {
+  color: #111827;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.ai-med-generic {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.ai-category-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.ai-batch-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ai-season-note {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #0891b2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.ai-num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #111827;
+}
+
+.ai-num--primary {
+  color: #005A8B;
+  font-size: 15px;
+}
+
+.ai-num--danger {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.ai-num--warning {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.ai-num--ok {
+  color: #059669;
+  font-weight: 600;
+}
+
+.ai-cell-sub {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+.ai-cell-sub--warn {
+  color: #d97706;
+}
+
+.ai-cell-sub--success {
+  color: #059669;
+}
+
+.ai-adjusted-flag {
+  color: #d97706;
+}
+
+.ai-muted {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.ai-outlook-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.ai-forecast-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.ai-forecast-main {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1.2;
+}
+
+.ai-forecast-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 16px;
+  color: #005A8B;
+}
+
+.ai-forecast-unit {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.ai-forecast-avg {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.3;
+}
+
+.ai-outlook-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.ai-outlook-days {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.ai-outlook-days-unit {
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 3px;
+  opacity: 0.75;
+}
+
+.ai-outlook-days.ai-num--danger {
+  color: #dc2626;
+}
+
+.ai-outlook-days.ai-num--warning {
+  color: #d97706;
+}
+
+.ai-outlook-days.ai-num--ok {
+  color: #059669;
+}
+
+.ai-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ai-status-badge--rising {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.ai-status-badge--falling {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.ai-status-badge--stable,
+.ai-status-badge--low {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.ai-status-badge--high,
+.ai-status-badge--stable-stock {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.ai-status-badge--medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ai-status-badge--critical {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.ai-status-badge--oos {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.ai-reorder-cell {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: default;
+}
+
+.ai-reorder-qty {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ai-reorder-sub {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.ai-discount-pct {
+  color: #059669;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.ai-insight-cell {
+  min-width: 160px;
+  max-width: 280px;
+}
+
+.ai-insight-text {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ai-source-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ai-source-gemini {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.ai-source-formula,
+.ai-source-insight {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.ai-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+@media (max-width: 992px) {
+  .ai-insights-table {
+    font-size: 12px;
+  }
+
+  .ai-insight-cell {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-insights-table thead th,
+  .ai-insights-table tbody td {
+    padding: 8px;
+  }
+
+  .ai-med-cell {
+    min-width: 110px;
+  }
+}
+
+/* ============================================ */
+/* WEATHER STOCK ALERTS                        */
+/* ============================================ */
+
+.wx-tab-count,
+.wx-inline-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.wx-header-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fafc 55%, #eef6f1 100%);
+  border: 1px solid #dbe7f3;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.wx-header-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wx-title {
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.wx-meta {
+  color: #64748b;
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.wx-meta-sep {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.wx-temp-block {
+  text-align: right;
+  min-width: 140px;
+}
+
+.wx-temp {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.wx-temp-unit {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-left: 2px;
+}
+
+.wx-condition {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #475569;
+  text-transform: capitalize;
+}
+
+.wx-humidity {
+  color: #64748b;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.wx-source-note {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.wx-narrative {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.wx-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.wx-event-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  color: #475569;
+}
+
+.wx-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wx-order-qty {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  color: #0d6efd;
+  letter-spacing: 0.01em;
+}
+
+.wx-priority {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.wx-priority--critical {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.wx-priority--high {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.wx-priority--normal {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.wx-row--critical {
+  background: #fff7f7;
+}
+
+.wx-row--high {
+  background: #fffaf5;
+}
+
+.wx-reasons {
+  font-size: 12px;
+  color: #64748b;
+  max-width: 220px;
+  line-height: 1.35;
+}
+
+.wx-warning-alert {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.wx-reminded-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 13px;
+}
+
+.wx-empty {
+  border: 1px dashed #e2e8f0;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.wx-national-note {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.04);
+  border-radius: 8px;
+  color: #334155;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.wx-city-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.wx-city-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.wx-city-chip--primary {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.wx-section-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.wx-section-title--missing {
+  color: #b91c1c;
+}
+
+.wx-section-title--reorder {
+  color: #c2410c;
+}
+
+.wx-type-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.wx-type-badge--missing {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.wx-row--missing {
+  background: #fff7f7;
+}
+
+@media (max-width: 576px) {
+  .wx-temp-block {
+    text-align: left;
+  }
+
+  .wx-header-card {
+    padding: 14px;
+  }
+}
