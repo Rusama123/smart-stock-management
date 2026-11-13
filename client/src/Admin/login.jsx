@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -95,7 +95,7 @@ const Login = () => {
         ? { role: 'admin', email: formData.email, password: formData.password }
         : { role: 'user', hospitalName: formData.hospitalName, email: formData.email, password: formData.password };
 
-      const res = await axios.post('http://localhost:5000/login', payload);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/login`, payload);
 
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));

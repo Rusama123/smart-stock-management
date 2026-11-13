@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -166,7 +166,7 @@ const Register = () => {
       };
       if (role === 'user') payload.pharmacyName = formData.hospitalName;
 
-      const res = await axios.post('http://localhost:5000/register', payload);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/register`, payload);
       alert(res.data.message);
       setShowVerificationModal(true);
     } catch (err) {
@@ -181,7 +181,7 @@ const Register = () => {
     if (verificationCode.length !== 6) return;
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/verify-email', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/verify-email`, {
         email: formData.email,
         code: verificationCode
       });
@@ -198,7 +198,7 @@ const Register = () => {
   const handleResendCode = async () => {
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/resend-verification', { email: formData.email });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/resend-verification`, { email: formData.email });
       alert(res.data.message);
     } catch (err) {
       alert(err.response?.data?.message || 'Error resending code!');

@@ -1,4 +1,4 @@
-// src/Admin/pages/PricingPage.jsx  — Clean 2-step flow: Account → Payment
+﻿// src/Admin/pages/PricingPage.jsx  — Clean 2-step flow: Account → Payment
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./header";
@@ -6,7 +6,7 @@ import Footer from "./footer";
 import "../Style/pricing.css";
 import { reinitPlugins } from "../../hooks/useScripts";
 
-const API = (import.meta.env.VITE_API_BASE_URL || "http://localhost:5000").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/$/, "");
 
 // ─── Plans ───────────────────────────────────────────────────────────────────
 const PLANS = [

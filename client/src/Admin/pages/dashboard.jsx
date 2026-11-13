@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../Style/dashboard.css';
@@ -82,7 +82,7 @@ const Dashboard = () => {
       setLoading(true);
       setError(null);
       
-      const res = await axios.get('http://localhost:5000/api/dashboard', {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/dashboard`, {
         timeout: 15000,
         headers: {
           'Authorization': `Bearer ${token}`,

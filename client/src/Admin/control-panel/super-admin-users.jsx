@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -50,7 +50,7 @@ const SuperAdminUsers = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/superadmin/all-users', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/superadmin/all-users`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsersData(response.data);
@@ -68,7 +68,7 @@ const SuperAdminUsers = () => {
       setLoadingAnalytics(true);
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        `http://localhost:5000/api/admin/user/${userId}/analytics`,
+        $apiExpr/api/admin/user/${userId}/analytics`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setUserAnalytics(response.data);
@@ -100,7 +100,7 @@ const SuperAdminUsers = () => {
       const token     = localStorage.getItem('token');
       const newStatus = !currentStatus;
       await axios.put(
-        `http://localhost:5000/api/admin/users/${userId}/access`,
+        $apiExpr/api/admin/users/${userId}/access`,
         { hasAccess: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -122,7 +122,7 @@ const SuperAdminUsers = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/admin/users/${selectedUser._id}/subscription`,
+        $apiExpr/api/admin/users/${selectedUser._id}/subscription`,
         { months: subscriptionMonths },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -162,7 +162,7 @@ const SuperAdminUsers = () => {
       setSavingEdit(true);
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/admin/users/${selectedUser._id}/edit`,
+        $apiExpr/api/admin/users/${selectedUser._id}/edit`,
         editUserForm,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -195,7 +195,7 @@ const SuperAdminUsers = () => {
       setSavingEdit(true);
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/superadmin/admins/${selectedUser.adminInfo._id}`,
+        $apiExpr/api/superadmin/admins/${selectedUser.adminInfo._id}`,
         editAdminForm,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -215,7 +215,7 @@ const SuperAdminUsers = () => {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/admin/users/${userId}`, {
+      await axios.delete($apiExpr/api/admin/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchUsersData();

@@ -1,17 +1,8 @@
 // server.js  (or index.js — wherever your Express app is bootstrapped)
-import * as dotenv from "dotenv";
-import { readFileSync } from "fs";
-import { resolve }      from "path";
+import dotenv from "dotenv";
 
-// ── Manual .env loader (keeps your existing approach) ──────────────────────
-const envPath    = resolve(process.cwd(), ".env");
-const envContent = readFileSync(envPath, "utf8");
-envContent.split("\n").forEach((line) => {
-  const [key, ...vals] = line.split("=");
-  if (key && key.trim() && !key.startsWith("#")) {
-    process.env[key.trim()] = vals.join("=").trim();
-  }
-});
+// ── Load .env file (gracefully skipped on Render where env vars are set via dashboard) ──
+dotenv.config();
 
 import express        from "express";
 import cors           from "cors";
@@ -35,7 +26,18 @@ app.use(
 
 // ── Global middleware ───────────────────────────────────────────────────────
 app.use(express.json());
-app.use(cors());
+
+// Allow both localhost (dev) and Vercel URL (production) via FRONTEND_URL env var
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 
 console.log(
   `🔑 JWT_SECRET loaded:`,

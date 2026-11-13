@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Modal, Button, Form, Alert, Tabs, Tab } from 'react-bootstrap';
 import axios from 'axios';
 import Quagga from 'quagga';
@@ -163,7 +163,7 @@ const BarcodeScanner = ({ show, onHide, onSuccess, mode = 'add' }) => {
     setError('');
     
     try {
-      const res = await axios.get(`http://localhost:5000/api/inventory/barcode/${code}`);
+      const res = await axios.get($apiExpr/api/inventory/barcode/${code}`);
       const item = res.data;
       
       const today = new Date();
@@ -208,7 +208,7 @@ const BarcodeScanner = ({ show, onHide, onSuccess, mode = 'add' }) => {
 
     try {
       setLoading(true);
-      await axios.post('http://localhost:5000/api/sales', {
+      await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/sales`, {
         inventoryId: scannedItem._id,
         quantity: parseInt(quantity),
         barcode: barcode
@@ -237,7 +237,7 @@ const BarcodeScanner = ({ show, onHide, onSuccess, mode = 'add' }) => {
         updatedBatches[0].quantity += parseInt(quantity);
       }
 
-      await axios.put(`http://localhost:5000/api/inventory/${scannedItem._id}`, {
+      await axios.put($apiExpr/api/inventory/${scannedItem._id}`, {
         ...scannedItem,
         batches: updatedBatches,
         currentStock: scannedItem.currentStock + parseInt(quantity)

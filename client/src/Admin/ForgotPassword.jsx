@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -113,7 +113,7 @@ const ForgotPassword = () => {
     setSuccess('');
 
     try {
-      const res = await axios.post('http://localhost:5000/forgot-password', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/forgot-password`, {
         email: formData.email
       });
       
@@ -153,7 +153,7 @@ const ForgotPassword = () => {
     setSuccess('');
 
     try {
-      const res = await axios.post('http://localhost:5000/verify-reset-code', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/verify-reset-code`, {
         email: formData.email,
         code: formData.code
       });
@@ -209,7 +209,7 @@ const ForgotPassword = () => {
     setSuccess('');
 
     try {
-      const res = await axios.post('http://localhost:5000/reset-password', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/reset-password`, {
         email: formData.email,
         code: formData.code,
         newPassword: formData.newPassword
@@ -250,7 +250,7 @@ const ForgotPassword = () => {
     setSuccess('');
 
     try {
-      const res = await axios.post('http://localhost:5000/forgot-password', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/forgot-password`, {
         email: formData.email
       });
       
