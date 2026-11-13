@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import useScripts, { reinitPlugins } from "./hooks/useScripts";
 
@@ -75,7 +75,7 @@ const App = () => {
   useScripts();
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <RouteChangeHandler />
       <Routes>
         <Route path="/"        element={<HomePage />} />
@@ -104,7 +104,7 @@ const App = () => {
           element={<ProtectedSuperAdminRoute><SuperAdminUsers /></ProtectedSuperAdminRoute>} />
       </Routes>
       <ChatbotRouter />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
