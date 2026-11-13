@@ -122,7 +122,7 @@ const AdminControl = () => {
       setLoadingAnalytics(true);
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/user/${userId}/analytics`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/user/${userId}/analytics`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setUserAnalytics(response.data);
@@ -153,7 +153,7 @@ const AdminControl = () => {
       const token = localStorage.getItem('token');
       const newStatus = !currentStatus;
       const res = await axios.put(
-        ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${userId}/access`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${userId}/access`,
         { hasAccess: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -176,7 +176,7 @@ const AdminControl = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${selectedUser._id}/subscription`,
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${selectedUser._id}/subscription`,
         { months: subscriptionMonths },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -239,8 +239,8 @@ const AdminControl = () => {
     try {
       const token = localStorage.getItem('token');
       const url = isSuperAdmin
-        ? ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/superadmin/admins/${userId}`
-        : ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${userId}`;
+        ? `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/superadmin/admins/${userId}`
+        : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${userId}`;
 
       await axios.delete(url, {
         headers: { Authorization: `Bearer ${token}` }
@@ -275,8 +275,8 @@ const AdminControl = () => {
       setSavingEdit(true);
       const token = localStorage.getItem('token');
       const url = isSuperAdmin
-        ? ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/superadmin/admins/${selectedUser._id}`
-        : ${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${selectedUser._id}/edit`;
+        ? `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/superadmin/admins/${selectedUser._id}`
+        : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/users/${selectedUser._id}/edit`;
 
       await axios.put(url, editForm, {
         headers: { Authorization: `Bearer ${token}` }

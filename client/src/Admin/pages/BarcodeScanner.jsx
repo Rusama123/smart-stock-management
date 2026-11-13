@@ -163,7 +163,7 @@ const BarcodeScanner = ({ show, onHide, onSuccess, mode = 'add' }) => {
     setError('');
     
     try {
-      const res = await axios.get(${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/inventory/barcode/${code}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/inventory/barcode/${code}`);
       const item = res.data;
       
       const today = new Date();
@@ -237,7 +237,7 @@ const BarcodeScanner = ({ show, onHide, onSuccess, mode = 'add' }) => {
         updatedBatches[0].quantity += parseInt(quantity);
       }
 
-      await axios.put(${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/inventory/${scannedItem._id}`, {
+      await axios.put(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/inventory/${scannedItem._id}`, {
         ...scannedItem,
         batches: updatedBatches,
         currentStock: scannedItem.currentStock + parseInt(quantity)
