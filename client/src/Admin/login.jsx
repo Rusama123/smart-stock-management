@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -132,7 +132,7 @@ const Login = () => {
   };
 
   return (
-    <div className='auth-main'>
+    <div className='auth-main' style={{position:'fixed',top:0,left:0,right:0,bottom:0,zIndex:99999,background:'#fff',overflowY:'auto',display:'block'}}>
       <div className="container-login d-flex">
         <div className="text-center login">
           <h2 className='f-heading  mt-5'>

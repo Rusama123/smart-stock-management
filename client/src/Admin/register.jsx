@@ -208,7 +208,7 @@ const Register = () => {
   };
 
   return (
-    <div className='auth-main'>
+    <div className='auth-main' style={{position:'fixed',top:0,left:0,right:0,bottom:0,zIndex:99999,background:'#fff',overflowY:'auto',display:'block'}}>
       <div className="container-login d-flex">
         <div className="text-center login mt-3">
           <h2 className='mt-5 '>
