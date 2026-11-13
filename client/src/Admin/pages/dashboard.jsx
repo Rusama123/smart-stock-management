@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Style/dashboard.css';
 import money from "../../assets/money.svg";
 import triangle from "../../assets/triangle.svg";
-import vector from "../../assets/vector.svg";
+import vector from "../../assets/Vector.svg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../header-footer/header';
 import Footers from '../header-footer/footer';
